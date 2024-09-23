@@ -34,7 +34,8 @@ We will want to create and run a container from this image to start the service.
 docker run -it fetch_sre_service
 ```
 
-[!WARNING] If you omit the "-it" tag, you'll get an EOF error.
+**WARNING**
+If you omit the "-it" tag, you'll get an EOF error.
 
 Once the container starts, it runs the microservice and prints availability information to the console every 15 seconds.
 
