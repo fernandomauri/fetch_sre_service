@@ -5,7 +5,7 @@ This microservice acts as a monitoring tool in that it pings given HTTP endpoint
 ## Prerequisites
 
 #### Implementation 1 (Using Docker):
-- Docker
+- Docker (Install for your OS here: https://docs.docker.com/desktop/)
 
 #### Implementation 2 (Local machine):
 - Python 3
