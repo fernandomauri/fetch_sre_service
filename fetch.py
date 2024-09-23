@@ -113,12 +113,10 @@ def calculate_availability_percentage(requests_data):
     '''
     Takes the data we returned from the request_data() function and calculates the availability percentage.
     '''
-    availability_rate = dict()
     for domain in requests_data:
         up_count = requests_data[domain]['up_count']
         request_count = requests_data[domain]['request_count']
         percent = math.ceil(100 * (up_count / request_count))
-        availability_rate[domain] = percent
         print(f'{domain} has {percent}% availability percentage')
 
 
@@ -157,14 +155,15 @@ def main():
 
     # Takes the input file and parses it.
     file_data = parse_file(file_path)
-    # Retrieves information for each domain listed in file_data. Contains up_count, down_count, and request_count.
-    domains_data = request_data(file_data)
+
     # Makes a dictionary to keep track of future changes to availability data.
     availability_data = dict()
 
     # Keep running the program until the user quits with KeyboardInterrupt.
     while True:
         try:
+            # Retrieves information for each domain listed in file_data. Contains up_count, down_count, and request_count.
+            domains_data = request_data(file_data)
             updated_values = aggregate_data(domains_data, availability_data)
             availability_data.update(updated_values)
             time.sleep(15)
