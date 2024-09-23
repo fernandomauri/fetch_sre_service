@@ -1,6 +1,9 @@
 # Fetch SRE Service
 
 This microservice acts as a monitoring tool in that it pings given HTTP endpoints every 15 seconds.
+Endpoint data comes from a YML file that the user chooses.
+This repo currently has one YML file (sample_file.yml), but users can add
+additional YML files to the working directory to run the service against.
 
 ## Prerequisites
 
