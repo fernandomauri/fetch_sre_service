@@ -1,7 +1,6 @@
 # Fetch SRE Service
 
 This microservice acts as a monitoring tool in that it pings given HTTP endpoints every 15 seconds.
-It 
 
 ## Prerequisites
 
@@ -12,11 +11,12 @@ It
 - Python 3
 - Python Libraries: requests, PyYAML
 
+
 ## Setting Up
 
 #### Implementation 1:
-After cloning this codebase and having Docker set up, make sure that you're in the working directory
-and run the following command in your terminal to create a Docker image of the microservice:
+After cloning this codebase and having Docker set up, make sure that you're in the working directory and have the Docker daemon running.
+Then run the following command in your terminal to create a Docker image of the microservice:
 
 ```bash
 docker build -t fetch_sre_service .
@@ -34,7 +34,7 @@ We will want to create and run a container from this image to start the service.
 docker run -it fetch_sre_service
 ```
 
-*If you omit the "-it" tag, you'll get an EOF error.
+[!WARNING] If you omit the "-it" tag, you'll get an EOF error.
 
 Once the container starts, it runs the microservice and prints availability information to the console every 15 seconds.
 
